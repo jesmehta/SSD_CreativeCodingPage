@@ -1,71 +1,83 @@
 const projects = [
   {
+    "order": 3,
     "folder": "Aarya_TOSSBIN",
     "student": "Aarya",
     "project": "TOSSBIN",
     "thumb": "Aarya.png"
   },
   {
-    "folder": "Arnav",
-    "student": "Arnav",
-    "project": "Untitled Project",
-    "thumb": "Arnav.png"
-  },
-  {
-    "folder": "Deepika_Pest_Control",
-    "student": "Deepika",
-    "project": "Pest Control",
-    "thumb": "Deepika.png"
-  },
-  {
+    "order": 2,
     "folder": "Dhruvi_Assignment_2",
     "student": "Dhruvi",
     "project": "Assignment 2",
     "thumb": "Dhruvi.png"
   },
   {
+    "order": 2,
+    "folder": "Arnav",
+    "student": "Arnav",
+    "project": "Untitled Project",
+    "thumb": "Arnav.png"
+  },
+  {
+    "order": 1,
+    "folder": "Deepika_Pest_Control",
+    "student": "Deepika",
+    "project": "Pest Control",
+    "thumb": "Deepika.png"
+  },
+  {
+    "order": 5,
     "folder": "Harshdeep_YE_hai_JURRY_WALLA_copy",
     "student": "Harshdeep",
     "project": "YE hai JURRY WALLA copy",
     "thumb": "Harshdeep.png"
   },
   {
+    "order": 6,
     "folder": "Ishan",
     "student": "Ishan",
     "project": "Untitled Project",
     "thumb": "Ishan.png"
   },
   {
+    "order": 7,
     "folder": "Jiya_my_name_fliesss",
     "student": "Jiya",
     "project": "my name fliesss",
     "thumb": "Jiya.png"
   },
   {
+    "order": 8,
     "folder": "Kamlesh_guitar_1_final_ver1",
     "student": "Kamlesh",
     "project": "guitar 1 final ver1",
     "thumb": "Kamlesh.png"
   },
   {
+    "order": 9,
     "folder": "Pushti_DINOEATS",
     "student": "Pushti",
     "project": "DINOEATS",
     "thumb": "Pushti_DinoEats.png"
   },
   {
+    "order": 10,
     "folder": "Sharvani_assignment2.v7",
     "student": "Sharvani",
     "project": "assignment2.v7",
     "thumb": "Sharvani.png"
   },
   {
+    "order": 11,
     "folder": "Sharvil_i_like_ball_final_copy",
     "student": "Sharvil",
     "project": "i like ball final copy",
     "thumb": "Sharvil.png"
   },
   {
+    "order": 12,
     "folder": "Siah_FINAL_GAME_NEON_JUICE_CENTER",
     "student": "Siah",
     "project": "FINAL GAME NEON JUICE CENTER",
@@ -82,7 +94,11 @@ function cleanTitle(text) {
     .trim();
 }
 
-projects.forEach((item, index) => {
+// Edit the order numbers above to rearrange the landing-page cards.
+// Lower numbers appear first. Matching order numbers keep the list's original order.
+const orderedProjects = [...projects].sort((a, b) => a.order - b.order);
+
+orderedProjects.forEach((item, index) => {
   const card = document.createElement("a");
   card.className = "project-card";
   card.href = `./${item.folder}/`;

@@ -223,6 +223,15 @@ h1 strong {
   font-weight: 800;
 }
 
+.project-instructions {
+  margin: 10px 0 0;
+  color: rgba(255, 248, 223, 0.88);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+}
+
 footer {
   display: flex;
   justify-content: space-between;

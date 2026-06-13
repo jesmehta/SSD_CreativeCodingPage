@@ -4,84 +4,96 @@ const projects = [
     "folder": "Aarya_TOSSBIN",
     "student": "Aarya",
     "project": "TOSSBIN",
-    "thumb": "Aarya.png"
+    "thumb": "Aarya.png",
+    "instructions": "Toss trash into the bin"
   },
   {
     "order": 2,
     "folder": "Dhruvi_Assignment_2",
     "student": "Dhruvi",
     "project": "Assignment 2",
-    "thumb": "Dhruvi.png"
+    "thumb": "Dhruvi.png",
+    "instructions": "Explore the interactive sketch"
   },
   {
     "order": 2,
     "folder": "Arnav",
     "student": "Arnav",
     "project": "Untitled Project",
-    "thumb": "Arnav.png"
+    "thumb": "Arnav.png",
+    "instructions": "Explore the interactive sketch"
   },
   {
     "order": 1,
     "folder": "Deepika_Pest_Control",
     "student": "Deepika",
     "project": "Pest Control",
-    "thumb": "Deepika.png"
+    "thumb": "Deepika.png",
+    "instructions": "Click pests to catch them"
   },
   {
     "order": 5,
     "folder": "Harshdeep_YE_hai_JURRY_WALLA_copy",
     "student": "Harshdeep",
     "project": "YE hai JURRY WALLA copy",
-    "thumb": "Harshdeep.png"
+    "thumb": "Harshdeep.png",
+    "instructions": "Let the camera judge you"
   },
   {
     "order": 6,
     "folder": "Ishan",
     "student": "Ishan",
     "project": "Untitled Project",
-    "thumb": "Ishan.png"
+    "thumb": "Ishan.png",
+    "instructions": "Explore the interactive sketch"
   },
   {
     "order": 7,
     "folder": "Jiya_my_name_fliesss",
     "student": "Jiya",
     "project": "my name fliesss",
-    "thumb": "Jiya.png"
+    "thumb": "Jiya.png",
+    "instructions": "Make the letters fly"
   },
   {
     "order": 8,
     "folder": "Kamlesh_guitar_1_final_ver1",
     "student": "Kamlesh",
     "project": "guitar 1 final ver1",
-    "thumb": "Kamlesh.png"
+    "thumb": "Kamlesh.png",
+    "instructions": "Use mouse to strum guitar"
   },
   {
     "order": 9,
     "folder": "Pushti_DINOEATS",
     "student": "Pushti",
     "project": "DINOEATS",
-    "thumb": "Pushti_DinoEats.png"
+    "thumb": "Pushti_DinoEats.png",
+    "instructions": "Feed the dinosaur to survive"
   },
   {
     "order": 10,
     "folder": "Sharvani_assignment2.v7",
     "student": "Sharvani",
     "project": "assignment2.v7",
-    "thumb": "Sharvani.png"
+    "thumb": "Sharvani.png",
+    "instructions": "Explore the interactive sketch"
   },
   {
     "order": 11,
     "folder": "Sharvil_i_like_ball_final_copy",
     "student": "Sharvil",
     "project": "i like ball final copy",
-    "thumb": "Sharvil.png"
+    "thumb": "Sharvil.png",
+    "instructions": "Move and bounce the ball"
   },
   {
     "order": 12,
     "folder": "Siah_FINAL_GAME_NEON_JUICE_CENTER",
     "student": "Siah",
     "project": "FINAL GAME NEON JUICE CENTER",
-    "thumb": "Siah.png"
+    "thumb": "Siah.png",
+    "instructions": "Serve neon juice fast"
   }
 ];
 
@@ -111,6 +123,7 @@ orderedProjects.forEach((item, index) => {
     <div class="card-text">
       <h2 class="project-name">${cleanTitle(item.project)}</h2>
       <p class="student-name">${item.student}</p>
+      <p class="project-instructions">${item.instructions || "Open the interactive sketch"}</p>
     </div>
   `;
 

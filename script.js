@@ -102,6 +102,14 @@ const projects = [
     "project": "FINAL GAME NEON JUICE CENTER",
     "thumb": "Siah.png",
     "instructions": "Serve neon juice fast"
+  },
+      {
+    "order": 13,
+    "folder": "Video_Filters",
+    "student": "VideoFilters",
+    "project": "Magic Mirror",
+    "thumb": "VideoFilter.png",
+    "instructions": "Smile And Wave"
   }
 ];
 

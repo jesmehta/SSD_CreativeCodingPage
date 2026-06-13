@@ -1,17 +1,25 @@
 const projects = [
+    {
+    "order": 1,
+    "folder": "Parth",
+    "student": "Parth",
+    "project": "Aerodynamics Simulation",
+    "thumb": "Parth.png",
+    "instructions": "Windtunnel for cars"
+  },
   {
     "order": 3,
     "folder": "Aarya_TOSSBIN",
     "student": "Aarya",
     "project": "TOSSBIN",
     "thumb": "Aarya.png",
-    "instructions": "Toss trash into the bin"
+    "instructions": "Bounce trash into the bin"
   },
   {
     "order": 2,
     "folder": "Dhruvi_Assignment_2",
     "student": "Dhruvi",
-    "project": "Assignment 2",
+    "project": "Coloring Book",
     "thumb": "Dhruvi.png",
     "instructions": "Explore the interactive sketch"
   },
@@ -19,7 +27,7 @@ const projects = [
     "order": 2,
     "folder": "Arnav",
     "student": "Arnav",
-    "project": "Untitled Project",
+    "project": "Scared Particles",
     "thumb": "Arnav.png",
     "instructions": "Explore the interactive sketch"
   },
@@ -35,7 +43,7 @@ const projects = [
     "order": 5,
     "folder": "Harshdeep_YE_hai_JURRY_WALLA_copy",
     "student": "Harshdeep",
-    "project": "YE hai JURRY WALLA copy",
+    "project": "Khalsa Fruit Center",
     "thumb": "Harshdeep.png",
     "instructions": "Let the camera judge you"
   },
@@ -43,7 +51,7 @@ const projects = [
     "order": 6,
     "folder": "Ishan",
     "student": "Ishan",
-    "project": "Untitled Project",
+    "project": "Aim Trainer",
     "thumb": "Ishan.png",
     "instructions": "Explore the interactive sketch"
   },
@@ -59,7 +67,7 @@ const projects = [
     "order": 8,
     "folder": "Kamlesh_guitar_1_final_ver1",
     "student": "Kamlesh",
-    "project": "guitar 1 final ver1",
+    "project": "Guitar",
     "thumb": "Kamlesh.png",
     "instructions": "Use mouse to strum guitar"
   },
@@ -75,12 +83,12 @@ const projects = [
     "order": 10,
     "folder": "Sharvani_assignment2.v7",
     "student": "Sharvani",
-    "project": "assignment2.v7",
+    "project": "Pong",
     "thumb": "Sharvani.png",
     "instructions": "Explore the interactive sketch"
   },
   {
-    "order": 11,
+    "order": 2,
     "folder": "Sharvil_i_like_ball_final_copy",
     "student": "Sharvil",
     "project": "i like ball final copy",

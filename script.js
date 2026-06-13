@@ -97,6 +97,7 @@ const projects = [
   }
 ];
 
+const particleCanvas = document.querySelector("#particleCanvas");
 const grid = document.querySelector("#showcaseGrid");
 
 function cleanTitle(text) {
@@ -106,9 +107,110 @@ function cleanTitle(text) {
     .trim();
 }
 
+function startParticleBackground() {
+  if (!particleCanvas || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  const context = particleCanvas.getContext("2d");
+  const particleCount = Math.floor(Math.random() * 10) + 5;
+  const particles = [];
+
+  function resizeCanvas() {
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+    particleCanvas.width = Math.floor(window.innerWidth * pixelRatio);
+    particleCanvas.height = Math.floor(window.innerHeight * pixelRatio);
+    particleCanvas.style.width = `${window.innerWidth}px`;
+    particleCanvas.style.height = `${window.innerHeight}px`;
+    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+  }
+
+  function createParticle() {
+    const speed = 0.9 + Math.random() * 0.9;
+    const angle = Math.random() * Math.PI * 2;
+
+    return {
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      radius: 2.5 + Math.random() * 3,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      color: ["#ff3df2", "#2afcff", "#c8ff35", "#ff9b28"][Math.floor(Math.random() * 4)]
+    };
+  }
+
+  function nearestParticle(source) {
+    let nearest = null;
+    let nearestDistanceSquared = Infinity;
+
+    particles.forEach((target) => {
+      if (target === source) {
+        return;
+      }
+
+      const dx = target.x - source.x;
+      const dy = target.y - source.y;
+      const distanceSquared = dx * dx + dy * dy;
+
+      if (distanceSquared < nearestDistanceSquared) {
+        nearest = target;
+        nearestDistanceSquared = distanceSquared;
+      }
+    });
+
+    return nearest;
+  }
+
+  function draw() {
+    context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+    particles.forEach((particle) => {
+      particle.x += particle.vx;
+      particle.y += particle.vy;
+
+      if (particle.x < particle.radius || particle.x > window.innerWidth - particle.radius) {
+        particle.vx *= -1;
+      }
+
+      if (particle.y < particle.radius || particle.y > window.innerHeight - particle.radius) {
+        particle.vy *= -1;
+      }
+
+      const nearest = nearestParticle(particle);
+
+      if (nearest) {
+        context.beginPath();
+        context.moveTo(particle.x, particle.y);
+        context.lineTo(nearest.x, nearest.y);
+        context.strokeStyle = "rgba(255, 248, 223, 0.16)";
+        context.lineWidth = 1;
+        context.stroke();
+      }
+
+      context.beginPath();
+      context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+      context.fillStyle = particle.color;
+      context.fill();
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  resizeCanvas();
+
+  for (let index = 0; index < particleCount; index += 1) {
+    particles.push(createParticle());
+  }
+
+  window.addEventListener("resize", resizeCanvas);
+  draw();
+}
+
 // Edit the order numbers above to rearrange the landing-page cards.
 // Lower numbers appear first. Matching order numbers keep the list's original order.
 const orderedProjects = [...projects].sort((a, b) => a.order - b.order);
+
+startParticleBackground();
 
 orderedProjects.forEach((item, index) => {
   const card = document.createElement("a");
